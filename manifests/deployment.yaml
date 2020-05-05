@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: container-greeting
-        image: "gcr.io/testproject-276315/pytest:v2"
+        image: "$IMAGE_URL"
         env:
         - name: "PORT"
           value: "5000"
