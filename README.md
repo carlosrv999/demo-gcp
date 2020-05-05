@@ -9,7 +9,7 @@ For running this sample, you need a Linux VM with the following installed
 - GCP with a Service Account
 - Docker >= 18.09
 - Terraform >= 12
-- Google SDK (gcloid command-line tool)
+- Google SDK (gcloud command-line tool)
 - kubectl https://kubernetes.io/es/docs/tasks/tools/install-kubectl/
 
 ## Installation
