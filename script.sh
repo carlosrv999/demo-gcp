@@ -1,4 +1,5 @@
 #terraform apply
+set -e
 source ./email.txt
 source ./terraform.tfvars
 gcloud auth activate-service-account ${EMAIL} --key-file=credentials.json
@@ -7,6 +8,7 @@ gcloud services enable container.googleapis.com
 terraform apply
 gcloud config set compute/zone $(terraform output location)
 gcloud container clusters get-credentials $(terraform output cluster_name)
+gcloud auth configure-docker
 docker pull carlosrv999/test-python:latest
 docker tag carlosrv999/test-python:latest gcr.io/$(terraform output project)/pytest:v2
 docker push gcr.io/$(terraform output project)/pytest:v2
