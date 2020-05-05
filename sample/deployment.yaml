@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: greeting-deployment
+spec:
+  selector:
+    matchLabels:
+      app: greeting
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: greeting
+    spec:
+      containers:
+      - name: container-greeting
+        image: "gcr.io/testproject-276315/pytest:v2"
+        env:
+        - name: "PORT"
+          value: "5000"
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 5
