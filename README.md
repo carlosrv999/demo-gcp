@@ -12,6 +12,8 @@ For running this sample, you need a Linux VM with the following installed
 - Google SDK (gcloud command-line tool)
 - kubectl https://kubernetes.io/es/docs/tasks/tools/install-kubectl/
 
+No need to install third-party IngressController (like NGINX Ingress Controller or Istio) as GCP has its own.
+
 ## Installation
 
 Download your Service Account credentials in JSON format and save to work directory of this repo, save file as **credentials.json**. The Service Account needs to have Project Owner permissions to the desired project.
